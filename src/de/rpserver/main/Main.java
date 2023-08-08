@@ -1,5 +1,8 @@
 package de.rpserver.main;
 
+import de.rpserver.commands.Job;
+import de.rpserver.commands.XPCommand;
+import de.rpserver.listener.OnBlockBreakEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -8,6 +11,11 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getCommand("xp").setExecutor(new XPCommand());
+        getCommand("job").setExecutor(new Job());
+
+        getServer().getPluginManager().registerEvents(new OnBlockBreakEvent(), this);
+
         System.out.println("[RPPlugin] Plugin wurde erfolgreich geladen.");
     }
 

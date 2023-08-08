@@ -1,0 +1,9 @@
+name: RPPlugin
+version: 0.1
+main: de.rpserver.main.Main
+author: GibMirRechte
+commands:
+  job:
+    aliases:
+      - jobs
+  xp:
